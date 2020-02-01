@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#2FB4FF</color>
+    <color name="colorPrimaryDark">#2FB4FF</color>
+    <color name="colorAccent">#ffffff</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorPurple">#983CFF</color>
+    <color name="colorPurpleT">#64983cff</color>
+    <color name="colorBlue">#2FB4FF</color>
+    <color name="colorBlueT">#023075</color>
+    <color name="gray">#C2C2C2</color>
+    <color name="lightGray">#DAD7D7</color>
+    <color name="orange">#F44336</color>
+    <color name="lightOrange">#F77D74</color>
+    <color name="black">#000000</color>
+    <color name="blue">#1A50DA</color>
+
+
+    <!-- colors for button style -->
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+    <!-- colors for tab and screent text -->
+
+    <color name="tab_indicator_gray">#c0c0c0</color>
+    <color name="intro_title_color">#000000</color>
+    <color name="intro_description_color">#656565</color>
+    //green
+    <color name="colorGreen">#AAE763</color>
+    <color name="colorGreenT">#5FEB65</color>
+
 </resources>
