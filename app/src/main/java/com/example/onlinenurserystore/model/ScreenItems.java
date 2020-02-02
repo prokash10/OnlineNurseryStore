@@ -1,6 +1,6 @@
 package com.example.onlinenurserystore.model;
 
-public class ScreenIttems {
+public class ScreenItems {
     String Title,Description;
     int Screenimg;
 
@@ -28,7 +28,7 @@ public class ScreenIttems {
         Screenimg = screenimg;
     }
 
-    public ScreenIttems(String title, String description, int screenimg) {
+    public ScreenItems(String title, String description, int screenimg) {
         Title = title;
         Description = description;
         Screenimg = screenimg;
