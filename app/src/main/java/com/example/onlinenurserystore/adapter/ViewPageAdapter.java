@@ -19,7 +19,7 @@ public class ViewPageAdapter extends PagerAdapter {
     Context mContext;
     List<ScreenItems> mListScreen;
 
-    public IntroViewPageAdapter(Context mContext, List<ScreenItems> mListScreen) {
+    public ViewPageAdapter(Context mContext, List<ScreenItems> mListScreen) {
         this.mContext = mContext;
         this.mListScreen = mListScreen;
     }
