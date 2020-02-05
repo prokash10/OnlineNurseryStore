@@ -24,7 +24,7 @@ public class SignUpActivity extends AppCompatActivity {
 
     EditText FullName,Email,Password;
     Button btnSignup;
-    CheckBox chkb;
+
     Button btnback;
     boolean ischecked = false;
 
@@ -37,7 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         Email = findViewById(R.id.etemail);
         Password = findViewById(R.id.etpassword);
         btnSignup = findViewById(R.id.btnsubmit);
-        chkb = findViewById(R.id.checkbox);
+
         btnback=findViewById(R.id.btnbak);
 
         btnback.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         final Bundle bundle = getIntent().getExtras();
 
-        chkb.setOnClickListener(new View.OnClickListener() {
+        btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(FullName.getText().toString()))
@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
                 else if (ischecked = false){
-                    chkb.setError("Mandatory Field");
+                    btnSignup.setError("Mandatory Field");
                     return;
                 }
 

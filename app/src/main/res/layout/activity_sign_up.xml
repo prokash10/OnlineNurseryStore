@@ -86,25 +86,7 @@
             android:textSize="20dp"></com.rengwuxian.materialedittext.MaterialEditText>
 
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="270dp">
-            <CheckBox
-                android:id="@+id/checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="I agree to Term of Uses and Privacy Policy"
-                android:layout_toEndOf="@+id/checkbox"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:textSize="10dp"/>
-        </RelativeLayout>
 
         <Button
             android:id="@+id/btnsubmit"
