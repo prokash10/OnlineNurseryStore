@@ -26,7 +26,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
-        inflater.inflate(R.menu.bottom_nav_menu,menu);
+        inflater.inflate(R.menu.toolbar_menu,menu);
         return true;
     }
 
@@ -34,17 +34,17 @@ public class ProductDetailsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Intent intent;
         switch (item.getItemId()) {
-            case R.id.navigation_cart:
+            case R.id.cart:
                 intent=new Intent(this, MainActivity.class);
                 intent.putExtra("name","cart");
                 startActivity(intent);
                 return true;
-            case R.id.navigation_home:
+            case R.id.Home:
                 intent=new Intent(this, MainActivity.class);
                 intent.putExtra("name","home");
                 startActivity(intent);
                 return true;
-            case R.id.navigation_account:
+            case R.id.Account:
                 intent=new Intent(this, MainActivity.class);
                 intent.putExtra("name","account");
                 startActivity(intent);
