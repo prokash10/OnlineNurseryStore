@@ -72,13 +72,13 @@ public class SignUpActivity extends AppCompatActivity {
                     return;
                 }
 
-                String PhoneNo = bundle.getString("PhoneNo");
+                String phoneNumber = bundle.getString("PhoneNo");
 
                 String name = Name.getText().toString();
                 String email = Email.getText().toString();
                 String password = Password.getText().toString();
 
-                Users users=new Users(name,email,password,PhoneNo);
+                Users users=new Users(name,email,password,phoneNumber);
 
                 UserAPI usersAPI = Url.getInstance().create(UserAPI.class);
                 Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);
