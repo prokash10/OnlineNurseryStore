@@ -35,20 +35,20 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
-        btnLog.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-
+//        btnLog.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+//                startActivity(intent);
+//            }
+//
+//        });
+         btnLog.setOnClickListener(new View.OnClickListener() {
+           @Override
+         public void onClick(View v) {
+           login();
+        }
         });
-        // btnLog.setOnClickListener(new View.OnClickListener() {
-        //   @Override
-        // public void onClick(View v) {
-        //   login();
-        //}
-        //});
 
     }
     private void login() {

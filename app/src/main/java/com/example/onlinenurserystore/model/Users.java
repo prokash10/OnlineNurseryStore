@@ -47,7 +47,7 @@ public class Users {
         PhoneNumber = phoneNumber;
     }
 
-    public Users(String name, String userName, String email, String password, String phoneNumber) {
+    public Users(String name, String userName, String email, String password) {
         Name = name;
         UserName = userName;
         Email = email;

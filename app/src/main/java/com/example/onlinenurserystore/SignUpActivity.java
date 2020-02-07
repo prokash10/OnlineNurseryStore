@@ -22,7 +22,7 @@ import retrofit2.Response;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    EditText FullName,Email,Password;
+    EditText Name,Email,Password;
     Button btnSignup;
 
     Button btnback;
@@ -33,7 +33,7 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        FullName = findViewById(R.id.etFullName);
+        Name = findViewById(R.id.etFullName);
         Email = findViewById(R.id.etemail);
         Password = findViewById(R.id.etpassword);
         btnSignup = findViewById(R.id.btnsubmit);
@@ -54,9 +54,9 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (TextUtils.isEmpty(FullName.getText().toString()))
+                if (TextUtils.isEmpty(Name.getText().toString()))
                 {
-                    FullName.setError("Mandatory Field");
+                    Name.setError("Mandatory Field");
                     return;
                 }
                 else if (TextUtils.isEmpty(Password.getText().toString())){
@@ -74,11 +74,11 @@ public class SignUpActivity extends AppCompatActivity {
 
                 String PhoneNo = bundle.getString("PhoneNo");
 
-                String Name = FullName.getText().toString();
+                String name = Name.getText().toString();
                 String email = Email.getText().toString();
                 String password = Password.getText().toString();
 
-                Users users=new Users(Name,email,password,PhoneNo);
+                Users users=new Users(name,email,password,PhoneNo);
 
                 UserAPI usersAPI = Url.getInstance().create(UserAPI.class);
                 Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);
