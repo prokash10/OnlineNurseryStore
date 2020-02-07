@@ -7,6 +7,7 @@ public class Url {
 
     // public static final String base_url = "http://192.168.1.11:3000/";
     public static final String base_url = "http://192.168.137.68/";
+   // public static final String base_url = "http://192.168.1.64:3030/";
     public static final String base_url_image = "http://10.0.2.2:3000/upload/";
     // public static final String base_url = "http://172.100.100.5:3000/";
     public static String token = "Bearer ";

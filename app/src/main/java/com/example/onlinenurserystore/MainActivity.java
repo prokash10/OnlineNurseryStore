@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.navigation_account:
                             openFragment(new AccountFragment());
                             return true;
+
                     }
                     return false;
                 }

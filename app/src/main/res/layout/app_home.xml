@@ -14,7 +14,7 @@
         android:id="@+id/toolBar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#ffffff">
+        android:background="@drawable/login_background">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:background="@drawable/searc_bg"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="5dp"
-            app:queryHint="Search in Daraz"/>
+            app:queryHint="Search "/>
 
     </androidx.appcompat.widget.Toolbar>
 
