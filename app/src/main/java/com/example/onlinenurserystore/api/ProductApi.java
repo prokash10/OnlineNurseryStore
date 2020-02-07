@@ -6,8 +6,12 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 public interface ProductApi {
     @GET("product/list")
     Call<List<Products>> getProduct();
+
+    @GET("product/getByCategory/{id}")
+    Call<List<Products>> getProductByID(@Path("id") String CategoryID);
 }
