@@ -1,17 +1,26 @@
 package com.example.onlinenurserystore.model;
 
 public class Users {
-    private String FullName;
+    private String Name;
+    private String UserName;
     private String Email;
-    private String PhoneNo;
     private String Password;
+    private String PhoneNumber;
 
-    public String getFullName() {
-        return FullName;
+    public String getName() {
+        return Name;
     }
 
-    public void setFullName(String fullName) {
-        FullName = fullName;
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String userName) {
+        UserName = userName;
     }
 
     public String getEmail() {
@@ -22,14 +31,6 @@ public class Users {
         Email = email;
     }
 
-    public String getPhoneNo() {
-        return PhoneNo;
-    }
-
-    public void setPhoneNo(String phoneNo) {
-        PhoneNo = phoneNo;
-    }
-
     public String getPassword() {
         return Password;
     }
@@ -38,10 +39,19 @@ public class Users {
         Password = password;
     }
 
-    public Users(String fullName, String email, String phoneNo, String password) {
-        FullName = fullName;
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
+
+    public Users(String name, String userName, String email, String password, String phoneNumber) {
+        Name = name;
+        UserName = userName;
         Email = email;
-        PhoneNo = phoneNo;
         Password = password;
+        PhoneNumber = phoneNumber;
     }
 }
