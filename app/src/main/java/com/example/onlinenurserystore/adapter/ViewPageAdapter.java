@@ -16,28 +16,28 @@ import com.example.onlinenurserystore.model.ScreenItems;
 import java.util.List;
 
 public class ViewPageAdapter extends PagerAdapter {
-    Context mContext;
-    List<ScreenItems> mListScreen;
+    Context pContext;
+    List<ScreenItems> pListScreen;
 
     public ViewPageAdapter(Context mContext, List<ScreenItems> mListScreen) {
-        this.mContext = mContext;
-        this.mListScreen = mListScreen;
+        this.pContext = mContext;
+        this.pListScreen = mListScreen;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) pContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layoutScreen = inflater.inflate(R.layout.layout_screen,null);
 
         ImageView imgSlide = layoutScreen.findViewById(R.id.intro_img);
         TextView title = layoutScreen.findViewById(R.id.intro_title);
         TextView description = layoutScreen.findViewById(R.id.intro_description);
 
-        title.setText(mListScreen.get(position).getTitle());
-        description.setText(mListScreen.get(position).getDescription());
-        imgSlide.setImageResource(mListScreen.get(position).getScreenimg());
+        title.setText(pListScreen.get(position).getTitle());
+        description.setText(pListScreen.get(position).getDescription());
+        imgSlide.setImageResource(pListScreen.get(position).getScreenimg());
 
         container.addView(layoutScreen);
 
@@ -47,7 +47,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return mListScreen.size();
+        return pListScreen.size();
     }
 
     @Override

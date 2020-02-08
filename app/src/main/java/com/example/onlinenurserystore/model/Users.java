@@ -7,12 +7,12 @@ public class Users {
     private String Password;
     private String PhoneNumber;
 
-    public Users(String name, String userName, String email, String password) {
+    public Users(String name, String userName, String email, String password, String phoneNumber) {
         Name = name;
         UserName = userName;
         Email = email;
         Password = password;
-
+        PhoneNumber = phoneNumber;
     }
 
     public String getName() {
@@ -47,5 +47,11 @@ public class Users {
         Password = password;
     }
 
+    public String getPhoneNumber() {
+        return PhoneNumber;
+    }
 
+    public void setPhoneNumber(String phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
 }

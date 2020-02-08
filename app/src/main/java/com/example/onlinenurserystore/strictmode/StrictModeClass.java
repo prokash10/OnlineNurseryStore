@@ -1,4 +1,4 @@
-package com.example.onlinenurserystore;
+package com.example.onlinenurserystore.strictmode;
 
 public class StrictModeClass {
     public static void StrictMode() {

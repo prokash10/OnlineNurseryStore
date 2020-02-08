@@ -5,6 +5,17 @@ public class Products {
     private String ProductImage;
     private  float Price;
     private String ProductDescription;
+    private String Date;
+    private  String Categoryid;
+
+    public Products(String productName, String productImage, float price, String productDescription, String date, String categoryid) {
+        ProductName = productName;
+        ProductImage = productImage;
+        Price = price;
+        ProductDescription = productDescription;
+        Date = date;
+        Categoryid = categoryid;
+    }
 
     public String getProductName() {
         return ProductName;
@@ -38,10 +49,19 @@ public class Products {
         ProductDescription = productDescription;
     }
 
-    public Products(String productName, String productImage, float price, String productDescription) {
-        ProductName = productName;
-        ProductImage = productImage;
-        Price = price;
-        ProductDescription = productDescription;
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public String getCategoryid() {
+        return Categoryid;
+    }
+
+    public void setCategoryid(String categoryid) {
+        Categoryid = categoryid;
     }
 }

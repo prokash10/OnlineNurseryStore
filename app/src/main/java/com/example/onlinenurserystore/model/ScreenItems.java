@@ -4,6 +4,12 @@ public class ScreenItems {
     String Title,Description;
     int Screenimg;
 
+    public ScreenItems(String title, String description, int screenimg) {
+        Title = title;
+        Description = description;
+        Screenimg = screenimg;
+    }
+
     public String getTitle() {
         return Title;
     }
@@ -25,12 +31,6 @@ public class ScreenItems {
     }
 
     public void setScreenimg(int screenimg) {
-        Screenimg = screenimg;
-    }
-
-    public ScreenItems(String title, String description, int screenimg) {
-        Title = title;
-        Description = description;
         Screenimg = screenimg;
     }
 }
