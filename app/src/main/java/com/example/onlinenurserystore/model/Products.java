@@ -1,36 +1,36 @@
 package com.example.onlinenurserystore.model;
 
 public class Products {
-    private String ProductName;
-    private String ProductImage;
+    private String Productname;
+    private String Productimage;
     private  float Price;
-    private String ProductDescription;
+    private String Productdescription;
     private String Date;
     private  String Categoryid;
 
-    public Products(String productName, String productImage, float price, String productDescription, String date, String categoryid) {
-        ProductName = productName;
-        ProductImage = productImage;
+    public Products(String productname, String productimage, float price, String productdescription, String date, String categoryid) {
+        Productname = productname;
+        Productimage = productimage;
         Price = price;
-        ProductDescription = productDescription;
+        Productdescription = productdescription;
         Date = date;
         Categoryid = categoryid;
     }
 
-    public String getProductName() {
-        return ProductName;
+    public String getProductname() {
+        return Productname;
     }
 
-    public void setProductName(String productName) {
-        ProductName = productName;
+    public void setProductname(String productname) {
+        Productname = productname;
     }
 
-    public String getProductImage() {
-        return ProductImage;
+    public String getProductimage() {
+        return Productimage;
     }
 
-    public void setProductImage(String productImage) {
-        ProductImage = productImage;
+    public void setProductimage(String productimage) {
+        Productimage = productimage;
     }
 
     public float getPrice() {
@@ -41,12 +41,12 @@ public class Products {
         Price = price;
     }
 
-    public String getProductDescription() {
-        return ProductDescription;
+    public String getProductdescription() {
+        return Productdescription;
     }
 
-    public void setProductDescription(String productDescription) {
-        ProductDescription = productDescription;
+    public void setProductdescription(String productdescription) {
+        Productdescription = productdescription;
     }
 
     public String getDate() {

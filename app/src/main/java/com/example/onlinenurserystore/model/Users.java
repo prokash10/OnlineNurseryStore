@@ -15,6 +15,9 @@ public class Users {
         PhoneNumber = phoneNumber;
     }
 
+    public Users(String name, String email, String email1, String password) {
+    }
+
     public String getName() {
         return Name;
     }

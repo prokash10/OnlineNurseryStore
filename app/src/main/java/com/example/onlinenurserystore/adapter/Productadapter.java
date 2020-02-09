@@ -38,9 +38,9 @@ public class Productadapter extends RecyclerView.Adapter<Productadapter.ItemView
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         final Products products = productsList.get(position);
-        holder.tvPlantname.setText(products.getProductName());
+        holder.tvPlantname.setText(products.getProductname());
         holder.tvRate.setText("Rs" + products.getPrice());
-        Picasso.get().load(Url.base_url_image + productsList.get(position).getProductImage()).into(holder.imgplant);
+        Picasso.get().load(Url.base_url_image + productsList.get(position).getProductimage()).into(holder.imgplant);
 
     }
 
