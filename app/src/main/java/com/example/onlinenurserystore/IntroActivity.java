@@ -50,14 +50,14 @@ public class IntroActivity extends AppCompatActivity {
         btnAnim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.button_animation);
         tvSkip = findViewById(R.id.tv_skip);
 
-        final List<ScreenItems> mList = new ArrayList<>();
-        mList.add(new ScreenItems("Decourative Plants","",R.drawable.decplant));
-        mList.add(new ScreenItems("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.delivery));
-        mList.add(new ScreenItems("Easy Payment","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.payment));
+        final List<ScreenItems> pList = new ArrayList<>();
+        pList.add(new ScreenItems("Decourative Plants","",R.drawable.decplant));
+        pList.add(new ScreenItems("Fast Delivery","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.delivery));
+        pList.add(new ScreenItems("Easy Payment","Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, consectetur  consectetur adipiscing elit",R.drawable.payment));
 
 
         screenPager =findViewById(R.id.intro_viewpager);
-        viewPageAdapter = new ViewPageAdapter(this,mList);
+        viewPageAdapter = new ViewPageAdapter(this,pList);
         screenPager.setAdapter(viewPageAdapter);
 
 
@@ -67,7 +67,7 @@ public class IntroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 position = screenPager.getCurrentItem();
-                if (position < mList.size()) {
+                if (position < pList.size()) {
 
                     position++;
                     screenPager.setCurrentItem(position);
@@ -75,7 +75,7 @@ public class IntroActivity extends AppCompatActivity {
 
                 }
 
-                if (position == mList.size()-1) { // when we rech to the last screen
+                if (position == pList.size()-1) { // when we rech to the last screen
 
                     // TODO : show the GETSTARTED Button and hide the indicator and the next button
 
@@ -91,7 +91,7 @@ public class IntroActivity extends AppCompatActivity {
         tabIndicator.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == mList.size()-1) {
+                if (tab.getPosition() == pList.size()-1) {
 
                     loaddLastScreen();
 
@@ -114,9 +114,6 @@ public class IntroActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(mainActivity);
-                // also we need to save a boolean value to storage so next time when the user run the app
-                // we could know that he is already checked the intro screen activity
-                // i'm going to use shared preferences to that process
                 savePrefsData();
                 finish();
 
@@ -126,7 +123,7 @@ public class IntroActivity extends AppCompatActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                screenPager.setCurrentItem(mList.size());
+                screenPager.setCurrentItem(pList.size());
             }
         });
 
