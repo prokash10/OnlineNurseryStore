@@ -1,6 +1,7 @@
 package com.example.onlinenurserystore.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.onlinenurserystore.ProductDetailsActivity;
 import com.example.onlinenurserystore.R;
 import com.example.onlinenurserystore.Url.Url;
 import com.example.onlinenurserystore.model.Products;
@@ -36,11 +38,24 @@ public class Productadapter extends RecyclerView.Adapter<Productadapter.ItemView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        final Products products = productsList.get(position);
+    public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
+       final Products products=productsList.get(position);
         holder.tvPlantname.setText(products.getProductname());
-        holder.tvRate.setText("Rs" + products.getPrice());
-        Picasso.get().load(Url.base_url_image + productsList.get(position).getProductimage()).into(holder.imgplant);
+        holder.tvRate.setText("Rs"+products.getPrice());
+        Picasso.get().load(Url.base_url_image+productsList.get(position).getProductimage()).into(holder.imgplant);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, ProductDetailsActivity.class);
+                intent.putExtra("id",productsList.get(position).get_id());
+                intent.putExtra("name",productsList.get(position).getProductname());
+                intent.putExtra("price",productsList.get(position).getPrice());
+                intent.putExtra("description",productsList.get(position).getProductdescription());
+                intent.putExtra("image",productsList.get(position).getProductimage());
+                context.startActivity(intent);
+            }
+        });
+
 
     }
 

@@ -1,12 +1,17 @@
 package com.example.onlinenurserystore.model;
 
 public class Products {
+    private String _id;
     private String Productname;
     private String Productimage;
     private  float Price;
     private String Productdescription;
     private String Date;
     private  String Categoryid;
+
+    public Products(String _id) {
+        this._id = _id;
+    }
 
     public Products(String productname, String productimage, float price, String productdescription, String date, String categoryid) {
         Productname = productname;
@@ -15,6 +20,10 @@ public class Products {
         Productdescription = productdescription;
         Date = date;
         Categoryid = categoryid;
+    }
+
+    public String get_id() {
+        return _id;
     }
 
     public String getProductname() {
