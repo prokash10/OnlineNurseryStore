@@ -16,13 +16,13 @@
         android:roundIcon="@mipmap/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.FullScreen">
-        <activity android:name=".CategoryActivity"></activity>
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".CategoryActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".IntroActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity
-            android:name=".LoginActivity"/>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SplashscreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

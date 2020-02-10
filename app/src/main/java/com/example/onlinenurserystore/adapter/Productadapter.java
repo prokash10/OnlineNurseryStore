@@ -16,33 +16,33 @@ import com.example.onlinenurserystore.R;
 import com.example.onlinenurserystore.Url.Url;
 import com.example.onlinenurserystore.model.Products;
 import com.squareup.picasso.Picasso;
+import com.example.onlinenurserystore.CategoryActivity;
 
 import java.util.List;
 
 public class Productadapter extends RecyclerView.Adapter<Productadapter.ItemViewHolder> {
+    private Context context;
+    private List<Products>productsList;
 
-    List<Products> productsList;
-    Context context;
-
-    public Productadapter(Context context, List<Products> productsList) {
-        this.productsList = productsList;
-        this.context = context;
+    public Productadapter(Context context, List<Products>productsList){
+        this.context=context;
+        this.productsList=productsList;
     }
 
 
     @NonNull
     @Override
-    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_plant, null);
-        return new ItemViewHolder(view);
+    public Productadapter.ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent,final int position) {
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_plant,null);
+        return new ItemViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, final int position) {
-       final Products products=productsList.get(position);
-        holder.tvPlantname.setText(products.getProductname());
-        holder.tvRate.setText("Rs"+products.getPrice());
-        Picasso.get().load(Url.base_url_image+productsList.get(position).getProductimage()).into(holder.imgplant);
+    public void onBindViewHolder(@NonNull Productadapter.ItemViewHolder holder, final int position) {
+        final Products product=productsList.get(position);
+        holder.tvItemName.setText(product.getProductname());
+        holder.tvItemPrice.setText("Rs"+product.getPrice());
+        Picasso.get().load(Url.base_url_image+productsList.get(position).getProductimage()).into(holder.imgItem);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,25 +56,22 @@ public class Productadapter extends RecyclerView.Adapter<Productadapter.ItemView
             }
         });
 
-
     }
 
     @Override
     public int getItemCount() {
-        return productsList.size(); }
-
+       return productsList.size();
+    }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder {
-        ImageView imgplant;
-        TextView tvPlantname, tvRate;
+        ImageView imgItem;
+        TextView tvItemName, tvItemPrice;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
-            imgplant = itemView.findViewById(R.id.imgItem);
-            tvPlantname = itemView.findViewById(R.id.tvItemName);
-            tvRate = itemView.findViewById(R.id.tvItemPrice);
+            this.imgItem=itemView.findViewById(R.id.imgItem);
+            this.tvItemName=itemView.findViewById(R.id.tvItemName);
+            this.tvItemPrice=itemView.findViewById(R.id.tvItemPrice);
         }
     }
-
-
 }

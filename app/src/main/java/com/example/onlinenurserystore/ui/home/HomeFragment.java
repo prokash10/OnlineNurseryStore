@@ -43,9 +43,12 @@ public class HomeFragment extends Fragment {
     ViewPager viewPager;
     private static int currentPage=0;
     private static int NUM_PAGES=0;
-    RecyclerView recyclerView;
+    RecyclerView recyclerView,getRecyclerView;
     CategoryAdapter categoryAdapter;
     ImageView imgCategory;
+
+
+    @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -53,7 +56,10 @@ public class HomeFragment extends Fragment {
         recyclerView = view.findViewById(R.id.categoryRecyclerView);
         imgCategory = view.findViewById(R.id.imgCategory);
         viewPager = view.findViewById(R.id.ViewPager);
+        getRecyclerView=view.findViewById(R.id.itemRecyclerView);
         SliderAdapter sliderAdapter = new SliderAdapter(getActivity());
+
+
 
 
         //image slider
@@ -116,9 +122,9 @@ public class HomeFragment extends Fragment {
                     Toast.makeText(getContext(), "Toast" + response.code(), Toast.LENGTH_SHORT).show();
                 }
                 Productadapter itemAdapter =new Productadapter(getActivity(),response.body());
-                recyclerView.setAdapter(itemAdapter);
-                recyclerView.setHasFixedSize(true);
-                recyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
+                getRecyclerView.setAdapter(itemAdapter);
+                getRecyclerView.setHasFixedSize(true);
+                getRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
                 itemAdapter.notifyDataSetChanged();
             }
 

@@ -38,6 +38,7 @@
         <androidx.appcompat.widget.SearchView
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:id="@+id/etSearch"
             android:background="@drawable/searc_bg"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="5dp"
