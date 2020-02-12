@@ -1,10 +1,12 @@
 package com.example.onlinenurserystore.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.onlinenurserystore.R;
+import com.example.onlinenurserystore.SearchActivity;
 import com.example.onlinenurserystore.Url.Url;
 import com.example.onlinenurserystore.adapter.CategoryAdapter;
 import com.example.onlinenurserystore.adapter.Productadapter;
@@ -48,6 +51,7 @@ public class HomeFragment extends Fragment {
     ImageView imgCategory;
 
 
+
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -57,7 +61,10 @@ public class HomeFragment extends Fragment {
         imgCategory = view.findViewById(R.id.imgCategory);
         viewPager = view.findViewById(R.id.ViewPager);
         getRecyclerView=view.findViewById(R.id.itemRecyclerView);
+
         SliderAdapter sliderAdapter = new SliderAdapter(getActivity());
+
+
 
 
 
@@ -113,8 +120,8 @@ public class HomeFragment extends Fragment {
     }
 
     public void getProduct(){
-        ProductApi medicineApi = Url.getInstance().create(ProductApi.class);
-        Call<List<Products>> listCall =medicineApi.getProduct();
+        ProductApi productApi = Url.getInstance().create(ProductApi.class);
+        Call<List<Products>> listCall =productApi.getProduct();
         listCall.enqueue(new Callback<List<Products>>() {
             @Override
             public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {

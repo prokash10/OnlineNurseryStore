@@ -37,7 +37,7 @@ public class SearchActivity extends AppCompatActivity {
 
         imgBack=findViewById(R.id.imgBack);
         imgSearch=findViewById(R.id.imgSearch);
-        tvSearch=findViewById(R.id.tvSearch);
+        tvSearch=findViewById(R.id.tvSearche);
         recyclerView=findViewById(R.id.recyclerViewSearch);
         imgBack.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -34,11 +34,12 @@
                 android:visibility="visible">
 
 
+
                 <ImageView
+                    android:id="@+id/imgplants"
                     android:layout_width="300dp"
-                    android:layout_height="238dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/flowers" />
+                    android:layout_height="240dp"
+                    android:layout_gravity="center"/>
             </FrameLayout>
 
 
@@ -55,11 +56,11 @@
 
 
                 <TextView
+                    android:id="@+id/tvPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="$ 250"
                     android:textColor="@color/colorBlue"
                     android:textSize="26dp" />
             </LinearLayout>
@@ -80,20 +81,21 @@
 
 
                 <TextView
+                    android:id="@+id/tvtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="flower"
+                    android:text="plant"
                     android:textColor="@color/colorBlue"
                     android:textSize="20dp" />
 
                 <TextView
+                    android:id="@+id/tvDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
                     android:layout_weight="1"
-                    android:text="asdasdasdadsdas"
                     android:textColor="@color/colorBlue"
                     android:textSize="16dp" />
 
@@ -147,7 +149,7 @@
                         android:hint="0"
                         android:inputType="number"
                         android:maxLength="1"
-                        android:textColor="@color/colorPurple"
+                        android:textColor="@color/orange"
                         android:textSize="16dp" />
 
                     <ImageView
@@ -171,9 +173,9 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/size"
                 android:layout_marginTop="16dp"
-                android:orientation="vertical"
+                android:orientation="vertical">
 
-                >
+
 
                 <TextView
                     android:layout_width="wrap_content"

@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':wearosapplication'
 rootProject.name='Online Nursery Store'

@@ -14,6 +14,6 @@ public interface ProductApi {
 
     @GET("product/getByCategory/{id}")
     Call<List<Products>> getProductByID(@Path("id") String CategoryID);
-    @GET("product/search/{medicineName}")
-    Call<List<Products>> searchProduct(@Path("medicineName") String ProductName);
+    @GET("product/search/{plantName}")
+    Call<List<Products>> searchProduct(@Path("plantName") String ProductName);
 }

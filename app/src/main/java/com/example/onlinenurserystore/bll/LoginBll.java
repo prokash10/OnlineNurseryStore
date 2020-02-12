@@ -20,13 +20,14 @@ public class LoginBll {
 
         try {
             Response<SignUpResponse> loginResponse = usersCall.execute();
-            if (loginResponse.isSuccessful()){
+            if (loginResponse.isSuccessful() &&
+            loginResponse.body().getStatus().equals("Login success!")) {
 
-                    Url.token += loginResponse.body().getToken();
-                    // Url.Cookie = imageResponseResponse.headers().get("Set-Cookie");
-                    isSuccess = true;
-
+                Url.token += loginResponse.body().getToken();
+                isSuccess = true;
             }
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }

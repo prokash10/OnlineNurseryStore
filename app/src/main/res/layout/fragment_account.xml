@@ -12,66 +12,119 @@
 
     <ImageView
         android:id="@+id/cover"
-        android:layout_width="408dp"
-        android:layout_height="127dp"
+        android:layout_width="match_parent"
+        android:layout_height="168dp"
         android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/login_background" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView2"
-        android:layout_width="145dp"
-        android:layout_height="128dp"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
         android:src="@drawable/njr"
-        app:layout_constraintBottom_toBottomOf="@+id/cover"
+        app:layout_constraintEnd_toEndOf="@+id/cover"
+        app:layout_constraintStart_toStartOf="@+id/cover"
+        app:layout_constraintTop_toTopOf="@+id/cover" />
+
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Number"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cover"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/username" />
 
-    <LinearLayout
-        android:layout_width="404dp"
-        android:layout_height="553dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical"
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="332dp"
+        android:background="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:padding="10dp"
+        android:text="Logout"
+        android:textAlignment="textStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.271" />
 
-        <Button
-            android:padding="10dp"
-            android:layout_marginTop="30dp"
-            android:drawableLeft="@drawable/ic_person_black"
-            android:background="@color/colorWhite"
-            android:text="Profile"
-            android:textAlignment="textStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:padding="10dp"
+        android:text="ChangePassword"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-        <Button
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/ic_change"
-            android:background="@color/colorWhite"
-            android:text="ChangePassword"
-            android:textAlignment="textStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:padding="10dp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/ic_person_black"
-            android:background="@color/colorWhite"
-            android:text="Logout"
-            android:textAlignment="textStart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:padding="10dp"
+        android:text="Profile"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_person_black"
+        android:padding="10dp"
+        android:text="Profile"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
+
+    <Button
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:background="@color/colorWhite"
+        android:drawableLeft="@drawable/ic_location_on_black_24dp"
+        android:padding="10dp"
+        android:text="Find Us"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/number" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
