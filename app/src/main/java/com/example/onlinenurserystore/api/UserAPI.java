@@ -14,18 +14,19 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface UserAPI {
-
     @POST("user/signup")
     Call<SignUpResponse> registerUser(@Body Users users);
 
     @FormUrlEncoded
     @POST("user/login")
-    Call<SignUpResponse> checkUser(@Field("UserName") String UserName, @Field("Password") String Password);
+    Call<SignUpResponse> checkUser(@Field("Email") String Email, @Field("Password") String Password);
+
     @GET("user/me")
-    Call<Users> getUserDetails(@Header("Authorization") String token);
+    Call<Users> getUserDetails(@Header("Authorization")String token);
 
     @PUT("user/me")
-    Call<Users> UpdateDetails(@Header("Authorization") String token, @Body Users users);
+    Call<Users> UpdateDetails(@Header("Authorization")String token,@Body Users users);
+
     @POST("users/logout")
     Call<Void> logOut(@Header("Authorization") String token);
 }

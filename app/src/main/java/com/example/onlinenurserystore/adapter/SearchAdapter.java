@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -21,9 +22,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     private Context context;
     private List<Products>productsList;
 
-    public SearchAdapter(Context context, List<Products> medicineList) {
+    public SearchAdapter(Context context, List<Products> productsList) {
         this.context = context;
-        this.productsList = medicineList;
+        this.productsList = productsList;
     }
 
 
@@ -38,8 +39,8 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     public void onBindViewHolder(@NonNull SearchAdapter.ViewHolder holder, final int position) {
 
         final Products products=productsList.get(position);
-        holder.tvItemName.setText(products.getProductname());
-        holder.tvItemPrice.setText("RS"+products.getPrice());
+        holder.Name.setText(products.getProductname());
+        holder.Price.setText("RS"+products.getPrice());
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,12 +59,13 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.ViewHolder
     @Override
     public int getItemCount() { return productsList.size();}
         public class ViewHolder extends RecyclerView.ViewHolder {
-            TextView tvItemName, tvItemPrice;
-            LinearLayout linearLayout;
+            private ImageView linearLayout;
+            private TextView Name;
+            private TextView Price;
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
-                tvItemName=itemView.findViewById(R.id.tvItemName);
-                tvItemPrice=itemView.findViewById(R.id.tvItemPrice);
+                Name=itemView.findViewById(R.id.tvItemName);
+                Price=itemView.findViewById(R.id.tvItemPrice);
                 linearLayout=itemView.findViewById(R.id.linearlayout);
             }
     }

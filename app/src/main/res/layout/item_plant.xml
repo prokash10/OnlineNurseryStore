@@ -25,7 +25,7 @@
                 android:id="@+id/tvItemName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Medicine Name"
+                android:text="Plant Name"
                 android:layout_below="@+id/imgItem"/>
 
             <TextView

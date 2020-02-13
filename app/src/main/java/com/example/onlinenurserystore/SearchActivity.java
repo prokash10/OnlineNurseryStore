@@ -24,10 +24,10 @@ import retrofit2.Response;
 
 public class SearchActivity extends AppCompatActivity {
 
-        private ImageButton imgBack, imgSearch;
-        TextView tvSearch;
-        RecyclerView recyclerView;
-        String name ="";
+    ImageButton Back, Search;
+    TextView etSearch;
+    RecyclerView recyclerView;
+    String name = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,44 +35,46 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
 
-        imgBack=findViewById(R.id.imgBack);
-        imgSearch=findViewById(R.id.imgSearch);
-        tvSearch=findViewById(R.id.tvSearche);
-        recyclerView=findViewById(R.id.recyclerViewSearch);
-        imgBack.setOnClickListener(new View.OnClickListener() {
+        Back = findViewById(R.id.backS);
+        Search = findViewById(R.id.searchS);
+        etSearch = findViewById(R.id.etsearch);
+        recyclerView = findViewById(R.id.recyclerViewSearch);
+
+        Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(SearchActivity.this,MainActivity.class);
+                Intent intent = new Intent(SearchActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
-        imgSearch.setOnClickListener(new View.OnClickListener() {
+
+        Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ProductApi medicineApi= Url.getInstance().create(ProductApi.class);
 
-                Call<List<Products>> voidCall=medicineApi.searchProduct(tvSearch.getText().toString());
+                ProductApi foodAPI = Url.getInstance().create(ProductApi.class);
 
-                voidCall.enqueue(new Callback<List<Products>>() {
+                Call<List<Products>>listCall = foodAPI.searchProduct(etSearch.getText().toString());
+
+                listCall.enqueue(new Callback<List<Products>>() {
                     @Override
                     public void onResponse(Call<List<Products>> call, Response<List<Products>> response) {
-                        if(!response.isSuccessful()){
-                            Toast.makeText(SearchActivity.this, "Toast"+response.code(), Toast.LENGTH_SHORT).show();
-                            return;
+                        if (!response.isSuccessful()){
+                            Toast.makeText(SearchActivity.this, "Toast " + response.code(), Toast.LENGTH_SHORT).show();
                         }
-                        SearchAdapter searchAdapter=new SearchAdapter(getApplicationContext(),response.body());
+
+                        SearchAdapter searchAdapter = new SearchAdapter(SearchActivity.this, response.body());
                         recyclerView.setAdapter(searchAdapter);
                         recyclerView.setHasFixedSize(true);
-                        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                        recyclerView.setLayoutManager(new LinearLayoutManager(SearchActivity.this));
                         searchAdapter.notifyDataSetChanged();
                     }
 
                     @Override
                     public void onFailure(Call<List<Products>> call, Throwable t) {
-                        Toast.makeText(SearchActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SearchActivity.this, "Error" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
-
             }
         });
     }

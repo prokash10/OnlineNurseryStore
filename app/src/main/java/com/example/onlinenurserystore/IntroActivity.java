@@ -77,9 +77,7 @@ public class IntroActivity extends AppCompatActivity {
 
                 if (position == pList.size()-1) { // when we rech to the last screen
 
-                    // TODO : show the GETSTARTED Button and hide the indicator and the next button
-
-                    loaddLastScreen();
+                     loaddLastScreen();
 
 
                 }
@@ -112,8 +110,8 @@ public class IntroActivity extends AppCompatActivity {
         btnGetStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(mainActivity);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
                 savePrefsData();
                 finish();
 
@@ -144,15 +142,13 @@ public class IntroActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    // show the GETSTARTED Button and hide the indicator and the next button
+
     private void loaddLastScreen() {
 
         btnNext.setVisibility(View.INVISIBLE);
         btnGetStarted.setVisibility(View.VISIBLE);
         tvSkip.setVisibility(View.INVISIBLE);
         tabIndicator.setVisibility(View.INVISIBLE);
-        // TODO : ADD an animation the getstarted button
-        // setup animation
         btnGetStarted.setAnimation(btnAnim);
 
 

@@ -99,13 +99,13 @@ public class SignUpActivity extends AppCompatActivity {
 
                 //String phoneNumber = bundle.getString("PhoneNo");
 
-                String Name = etFullName.getText().toString();
+                String FullName = etFullName.getText().toString();
                 String UserName = etUserName.getText().toString();
                 String Email = etEmail.getText().toString();
-                String PhoneNumber = etPhoneNo.getText().toString();
+                String PhoneNo = etPhoneNo.getText().toString();
                 String Password = etPassword.getText().toString();
 
-                Users users = new Users(Name, UserName, Email, PhoneNumber, Password);
+                Users users = new Users(FullName, UserName, Email, PhoneNo, Password);
 
                 UserAPI usersAPI = Url.getInstance().create(UserAPI.class);
                 Call<SignUpResponse> signUpCall = usersAPI.registerUser(users);

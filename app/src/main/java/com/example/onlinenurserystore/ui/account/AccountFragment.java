@@ -90,7 +90,7 @@ public class AccountFragment extends Fragment {
             public void onResponse(Call<Users> call, Response<Users> response) {
                 if (response.isSuccessful()){
                     Username.setText(response.body().getUserName());
-                    PhoneNo.setText(response.body().getPhoneNumber());
+                    PhoneNo.setText(response.body().getPhoneNo());
                     return;
                 }
                 else {
