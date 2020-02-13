@@ -66,6 +66,13 @@ public class AccountFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         relativeLayoutprofile.setOnClickListener(new View.OnClickListener() {
             @Override
