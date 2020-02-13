@@ -18,10 +18,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/almendra_sc"
+
             android:text="Your Information"
             android:textColor="@color/black"
-            android:textSize="24dp"></TextView>
+            android:textSize="24dp"/>
 
 
     </RelativeLayout>
@@ -113,5 +113,21 @@
             android:layout_height="wrap_content" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativelayoutOut1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/btnmap"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/ic_map_black_24dp"
+        android:background="@drawable/login_background"
+        android:text="Location"
+        android:textAlignment="textStart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

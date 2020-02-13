@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/nav_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
     <item
-        android:id="@+id/navigation_message"
+        android:id="@+id/nav_fav"
         android:icon="@drawable/ic_favorite"
         android:title="Favourites" />
 
     <item
-        android:id="@+id/navigation_cart"
+        android:id="@+id/nav_history"
         android:icon="@drawable/ic_history"
         android:title="History" />
     <item
-        android:id="@+id/navigation_account"
+        android:id="@+id/nav_account"
         android:icon="@drawable/ic_accoutn"
         android:title="@string/title_notifications" />
 

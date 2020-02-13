@@ -31,9 +31,7 @@ public class OrderFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_order, container, false);
     }
 
-//    @Override
-//    public void onMapReady(GoogleMap googleMap) {
-//
-//    }
 
 }
+
+

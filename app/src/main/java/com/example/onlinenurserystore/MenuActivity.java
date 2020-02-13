@@ -43,9 +43,9 @@ public class MenuActivity extends AppCompatActivity {
                 FragmentManager fm= getSupportFragmentManager();
                 fm.beginTransaction().replace(R.id.navigation_home, new HomeFragment()).commit();
                 return true;
-            case R.id.navigation_message:
+            case R.id.nav_fav:
                 FragmentManager FM= getSupportFragmentManager();
-                FM.beginTransaction().replace(R.id.navigation_message, new AccountFragment()).commit();
+                FM.beginTransaction().replace(R.id.nav_fav, new AccountFragment()).commit();
                 return true;
         }
         return super.onOptionsItemSelected(item);

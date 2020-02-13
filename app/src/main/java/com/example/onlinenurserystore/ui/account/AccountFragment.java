@@ -17,7 +17,9 @@ import android.widget.Toast;
 import com.example.onlinenurserystore.EditProfileActivity;
 import com.example.onlinenurserystore.LoginActivity;
 import com.example.onlinenurserystore.MainActivity;
+import com.example.onlinenurserystore.MapsActivity;
 import com.example.onlinenurserystore.R;
+import com.example.onlinenurserystore.SignUpActivity;
 import com.example.onlinenurserystore.Url.Url;
 import com.example.onlinenurserystore.api.UserAPI;
 import com.example.onlinenurserystore.bll.LogoutBll;
@@ -32,9 +34,9 @@ import retrofit2.Response;
  * A simple {@link Fragment} subclass.
  */
 public class AccountFragment extends Fragment {
-    private Button btnLogOut;
+    private Button btnLogOut, btnmap;
     TextView Username, PhoneNo;
-    RelativeLayout relativeLayout, relativeLayoutprofile;
+    RelativeLayout relativeLayout, relativeLayoutprofile, reltivelayoutmap;
 
 
     public AccountFragment() {
@@ -51,9 +53,19 @@ public class AccountFragment extends Fragment {
         // Inflate the layout for this fragment
         relativeLayout = view.findViewById(R.id.relativelayoutOut);
         relativeLayoutprofile = view.findViewById(R.id.profilelayout);
+        relativeLayout=view.findViewById(R.id.relativelayoutOut1);
         Username = view.findViewById(R.id.username);
         PhoneNo = view.findViewById(R.id.PhoneNoP);
         btnLogOut = view.findViewById(R.id.Logout);
+        btnmap=view.findViewById(R.id.btnmap);
+
+        btnmap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MapsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         relativeLayoutprofile.setOnClickListener(new View.OnClickListener() {
             @Override
