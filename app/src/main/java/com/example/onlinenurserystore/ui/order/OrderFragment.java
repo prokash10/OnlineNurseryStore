@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.onlinenurserystore.R;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,5 +30,10 @@ public class OrderFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_order, container, false);
     }
+
+//    @Override
+//    public void onMapReady(GoogleMap googleMap) {
+//
+//    }
 
 }

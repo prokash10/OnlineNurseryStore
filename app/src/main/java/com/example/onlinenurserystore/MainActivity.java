@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.onlinenurserystore.ui.account.AccountFragment;
-import com.example.onlinenurserystore.ui.cart.CartFragment;
+import com.example.onlinenurserystore.ui.Favourities.CartFragment;
 import com.example.onlinenurserystore.ui.home.HomeFragment;
 import com.example.onlinenurserystore.ui.order.OrderFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -13,10 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
