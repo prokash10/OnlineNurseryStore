@@ -10,13 +10,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.onlinenurserystore.EditProfileActivity;
+import com.example.onlinenurserystore.LoginActivity;
+import com.example.onlinenurserystore.MainActivity;
 import com.example.onlinenurserystore.R;
 import com.example.onlinenurserystore.Url.Url;
 import com.example.onlinenurserystore.api.UserAPI;
+import com.example.onlinenurserystore.bll.LogoutBll;
 import com.example.onlinenurserystore.model.Users;
+import com.example.onlinenurserystore.strictmode.StrictModeClass;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,8 +32,9 @@ import retrofit2.Response;
  * A simple {@link Fragment} subclass.
  */
 public class AccountFragment extends Fragment {
-    private TextView username, number;
-    private Button btnmap;
+    private Button btnLogOut;
+    TextView Username, PhoneNo;
+    RelativeLayout relativeLayout, relativeLayoutprofile;
 
 
     public AccountFragment() {
@@ -38,34 +45,44 @@ public class AccountFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_account, container, false);
-        username = root.findViewById(R.id.username);
-        number = root.findViewById(R.id.number);
-        btnmap=root.findViewById(R.id.map);
+        relativeLayout = view.findViewById(R.id.relativelayoutOut);
+        relativeLayoutprofile = view.findViewById(R.id.profilelayout);
+        Username = view.findViewById(R.id.username);
+        PhoneNo = view.findViewById(R.id.PhoneNoP);
+        btnLogOut = view.findViewById(R.id.Logout);
 
-//        btnmap.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MapsActivity.class, AccountFragment.this);
-//                startActivity(intent);
-//
-//            }
-//        });
+        relativeLayoutprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        UserAPI userApi= Url.getInstance().create(UserAPI.class);
-        final Call<Users> userCall =userApi.getUserDetails(Url.token);
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logout();
+            }
+        });
 
-        userCall.enqueue(new Callback<Users>() {
+        UserAPI usersAPI = Url.getInstance().create(UserAPI.class);
+        final Call<Users> usersCall = usersAPI.getUserDetails(Url.token);
+
+        usersCall.enqueue(new Callback<Users>() {
             @Override
             public void onResponse(Call<Users> call, Response<Users> response) {
-                if (response.isSuccessful()) {
-                    username.setText(response.body().getEmail());
-                    number.setText(response.body().getPhoneNumber());
+                if (response.isSuccessful()){
+                    Username.setText(response.body().getUserName());
+                    PhoneNo.setText(response.body().getPhoneNumber());
                     return;
                 }
                 else {
-                    Toast.makeText(getActivity(), "Error ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -75,10 +92,25 @@ public class AccountFragment extends Fragment {
             }
         });
 
-        return root;
+
+
+        return view;
     }
 
+    public void logout(){
+        String token= Url.token;
 
+        LogoutBll logoutBLL = new LogoutBll();
+        StrictModeClass.StrictMode();
+        if (logoutBLL.logout(token)){
+            getActivity().finish();
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent);
+            Toast.makeText(getActivity(), "Logout succecsful", Toast.LENGTH_SHORT).show();
+
+        }else {
+            Toast.makeText(getContext(), "Logout process failed! Please try again", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }
-
