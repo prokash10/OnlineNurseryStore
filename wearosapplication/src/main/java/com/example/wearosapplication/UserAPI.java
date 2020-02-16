@@ -12,8 +12,7 @@ import retrofit2.http.POST;
 import retrofit2.http.PUT;
 
 public interface UserAPI {
-    @POST("user/signup")
-    Call<SignUpResponse> registerUser(@Body Users users);
+
 
     @FormUrlEncoded
     @POST("user/login")
